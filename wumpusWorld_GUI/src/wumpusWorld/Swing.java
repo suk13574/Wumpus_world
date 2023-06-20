@@ -556,19 +556,20 @@ public class Swing {
 		
 		//Create Button
 		JButton Next = new JButton(""); // 금 찾으러 가는 버튼
-		Next.setIcon(new ImageIcon("C:\\Users\\윤혜숙\\Desktop\\4학년\\인공지능\\팀프로젝트 - wumpus world\\구현 이미지\\Image_NEXT.jpg"));
+		//new ImageIcon(this.getClass().getResource("Block_wall.jpg"))
+		Next.setIcon(new ImageIcon(this.getClass().getResource("Image_NEXT.jpg")));
 		Next.setFont(new Font("굴림", Font.PLAIN, 12));
 		Next.setBounds(570, 550, 114, 55);
 		frame.getContentPane().add(Next);
 		
 		JButton Home = new JButton(""); // 출발지로 돌아가는 버튼
-		Home.setIcon(new ImageIcon("C:\\Users\\윤혜숙\\Desktop\\4학년\\인공지능\\팀프로젝트 - wumpus world\\구현 이미지\\Image_HOME.jpg"));
+		Home.setIcon(new ImageIcon(this.getClass().getResource("Image_HOME.jpg")));
 		Home.setFont(new Font("굴림", Font.PLAIN, 12));
 		Home.setBounds(570, 605, 114, 55);
 		frame.getContentPane().add(Home);
 		
 		JButton Exit = new JButton(""); // 스윙 창 종료 버튼
-		Exit.setIcon(new ImageIcon("C:\\Users\\윤혜숙\\Desktop\\4학년\\인공지능\\팀프로젝트 - wumpus world\\구현 이미지\\Image_EXIT.jpg"));
+		Exit.setIcon(new ImageIcon(this.getClass().getResource("Image_EXIT.jpg")));
 		Exit.setBounds(0, 605, 80, 55);
 		frame.getContentPane().add(Exit);
 			
