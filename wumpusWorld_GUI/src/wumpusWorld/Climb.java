@@ -2,16 +2,16 @@ package wumpusWorld;
 
 
 public class Climb {
-	Newstate world = new Newstate(); //grid Á¤º¸ÀÖÀ½
-	Percept p = new Percept(); //percept ¹Þ¾Æ¿À±â À§ÇÑ °´Ã¼
-	Agent agent = new Agent(); //agent Á¤º¸ÀúÀåµÈ °´Ã¼
+	Newstate world = new Newstate(); //grid ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	Percept p = new Percept(); //percept ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+	Agent agent = new Agent(); //agent ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
 	int x;
 	int y;
 	int[] nextXY = new int[2];
 	
 	static int[][] check = new int[6][6];
 		
-	int swingGrab = 0; //±Ý Àâ¾Ò´Â°¡?
+	int swingGrab = 0; //ï¿½ï¿½ ï¿½ï¿½Ò´Â°ï¿½?
 	
 	public Climb() {
 		for (int i = 0; i < 6; i++) {
@@ -21,26 +21,26 @@ public class Climb {
 		}
 	}
 	
-	//swing grab À¯Áö
+	//swing grab ï¿½ï¿½ï¿½ï¿½
 	public int SwingGrab() throws InterruptedException {
 		if (swingGrab == 1) return 1;
 		else return 0;
 	}
 	
 	public int DoClimb() throws InterruptedException {
-			//±Ý Àâ¾Ò´Ù.
+			//ï¿½ï¿½ ï¿½ï¿½Ò´ï¿½.
 			swingGrab = 1;
 			
-			//°ª ¹Þ¾Æ¿È
+			//ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
 			x = agent.getx();
 			y = agent.gety();
 			
-			//1. (1, 1)ÀÌ¸é ³¡
+			//1. (1, 1)ï¿½Ì¸ï¿½ ï¿½ï¿½
 			if (x == 1 && y == 1) {
 				return 0;
 			}
 			
-			//2. x = 1 ¾Æ´Ï°í ´ÙÀ½ °¡·Á´Â °÷ none -> (x--,y)·Î °¨
+			//2. x = 1 ï¿½Æ´Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ none -> (x--,y)ï¿½ï¿½ ï¿½ï¿½
 			if (x > 1  && (Agent.IKnow[x - 1][y] == "NONE" || Agent.IKnow[x - 1][y] == "NOGOLD" ||
 					Agent.IKnow[x - 1][y] == "GOLD" || Agent.IKnow[x - 1][y] == "WUMPUSDIE") && check[x - 1][y] == 0) {
 				check[x - 1][y] = 1;
@@ -50,7 +50,7 @@ public class Climb {
 				Agent.direction = "WEST";
 			}
 			
-			//3. y = 1 ¾Æ´Ï°í ´ÙÀ½ °¡·Á´Â °÷ none -> (x, y--)·Î °¨
+			//3. y = 1 ï¿½Æ´Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ none -> (x, y--)ï¿½ï¿½ ï¿½ï¿½
 			else if (y > 1 && (Agent.IKnow[x][y - 1] == "NONE" || Agent.IKnow[x][y - 1] == "NOGOLD" ||
 					Agent.IKnow[x][y - 1] == "GOLD" || Agent.IKnow[x][y - 1] == "WUMPUSDIE") && check[x][y - 1] == 0) {
 				check[x][y - 1] = 1;
@@ -60,7 +60,7 @@ public class Climb {
 				Agent.direction = "SOUTH";
 			}
 			
-			//4. x, y ´Ù ÁÙÀÏ ¼ö ¾øÀ½ (x++, y)·Î °¨, ¾Õ¿¡ pitch ÀÖ°Å³ª ¸ð¸£¸é y++;
+			//4. x, y ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (x++, y)ï¿½ï¿½ ï¿½ï¿½, ï¿½Õ¿ï¿½ pitch ï¿½Ö°Å³ï¿½ ï¿½ð¸£¸ï¿½ y++;
 			else {
 				if (x < 5 && ((Agent.IKnow[x + 1][y] == "NONE") || (Agent.IKnow[x + 1][y] == "NOGOLD" ||
 						Agent.IKnow[x + 1][y] == "GOLD" || Agent.IKnow[x + 1][y] == "WUMPUSDIE"))) {
@@ -79,11 +79,11 @@ public class Climb {
 					Agent.direction = "NORTH";
 				}
 			}
-			//½ºÀ® ½ÇÇà
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			Swing swing = new Swing();
 			swing.frame.setVisible(true);
 			
-			System.out.println("("+nextXY[0]+", "+nextXY[1]+")·Î ÀÌµ¿");
+			System.out.println("("+nextXY[0]+", "+nextXY[1]+")ï¿½ï¿½ ï¿½Ìµï¿½");
 			return 1;
 	}
-}//class ³¡
+}//class ï¿½ï¿½

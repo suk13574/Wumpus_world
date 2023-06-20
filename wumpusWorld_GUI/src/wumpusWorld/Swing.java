@@ -19,7 +19,7 @@ public class Swing {
 	static Start start = new Start(); //let's get the gold
 	static Climb climb = new Climb(); //after gold grab
 	static Agent agent = new Agent(); //agent 정보저장된 객체
-	static Percept percept = new Percept(); //percept	
+	static Percept percept = new Percept(); //percept
 
 	//Loading agent (x,y)
 	int x = agent.getx();
@@ -40,67 +40,67 @@ public class Swing {
 				
 		//Insert Image
 		//Block
-		ImageIcon Block_wall = new ImageIcon(this.getClass().getResource("Block_wall.jpg")); //wall
-		ImageIcon Block_pitch = new ImageIcon(this.getClass().getResource("Block_pitch.jpg")); //pitch
-		ImageIcon Block_wumpus = new ImageIcon(this.getClass().getResource("Block_wumpus.jpg")); //wumpus
-		ImageIcon Block_wumpusDie = new ImageIcon(this.getClass().getResource("Block_wumpusDie.jpg")); //wumpus die
-		ImageIcon Block_gold = new ImageIcon(this.getClass().getResource("Block_gold.jpg")); //gold
-		ImageIcon Block_noneGold = new ImageIcon(this.getClass().getResource("Block_noneGold.jpg")); //after gold grab
-		ImageIcon Block_none = new ImageIcon(this.getClass().getResource("Block_none.jpg")); //none
-		ImageIcon Block_finish = new ImageIcon(this.getClass().getResource("Block_finish.jpg")); //Finish
+		ImageIcon Block_wall = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_wall.jpg")); //wall
+		ImageIcon Block_pitch = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_pitch.jpg")); //pitch
+		ImageIcon Block_wumpus = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_wumpus.jpg")); //wumpus
+		ImageIcon Block_wumpusDie = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_wumpusDie.jpg")); //wumpus die
+		ImageIcon Block_gold = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_gold.jpg")); //gold
+		ImageIcon Block_noneGold = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_noneGold.jpg")); //after gold grab
+		ImageIcon Block_none = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_none.jpg")); //none
+		ImageIcon Block_finish = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Block_finish.jpg")); //Finish
 		
 		//Percept check (0,5)
-		ImageIcon Percept_none = new ImageIcon(this.getClass().getResource("Percept_none.jpg")); //none
-		ImageIcon Percept_bump = new ImageIcon(this.getClass().getResource("Percept_bump.jpg")); //bump
-		ImageIcon Percept_breeze  = new ImageIcon(this.getClass().getResource("Percept_breeze.jpg")); //breeze
-		ImageIcon Percept_stench  = new ImageIcon(this.getClass().getResource("Percept_stench.jpg")); //stench
-		ImageIcon Percept_breezeStench  = new ImageIcon(this.getClass().getResource("Percept_breezeStench.jpg")); //breeze stench
-		ImageIcon Percept_grab  = new ImageIcon(this.getClass().getResource("Percept_grab.jpg")); //grab
-		ImageIcon Percept_grabBreeze = new ImageIcon(this.getClass().getResource("Percept_grabBreeze.jpg")); //grab breeze
-		ImageIcon Percept_grabStench = new ImageIcon(this.getClass().getResource("Percept_grabStench.jpg")); //grab stench
-		ImageIcon Percept_grabBreezeStench = new ImageIcon(this.getClass().getResource("Percept_grabBreezeStench.jpg")); //grab breeze stench
-		ImageIcon Percept_scream = new ImageIcon(this.getClass().getResource("Percept_scream.jpg")); //scream
-		ImageIcon Percept_screamBreeze = new ImageIcon(this.getClass().getResource("Percept_screamBreeze.jpg")); //scream breeze
-		ImageIcon Percept_screamStench = new ImageIcon(this.getClass().getResource("Percept_screamStench.jpg")); //scream stench
-		ImageIcon Percept_screamBreezeStench = new ImageIcon(this.getClass().getResource("Percept_screamBreezeStench.jpg")); //scream breeze stench
+		ImageIcon Percept_none = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_none.jpg")); //none
+		ImageIcon Percept_bump = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_bump.jpg")); //bump
+		ImageIcon Percept_breeze  = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_breeze.jpg")); //breeze
+		ImageIcon Percept_stench  = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_stench.jpg")); //stench
+		ImageIcon Percept_breezeStench  = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_breezeStench.jpg")); //breeze stench
+		ImageIcon Percept_grab  = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_grab.jpg")); //grab
+		ImageIcon Percept_grabBreeze = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_grabBreeze.jpg")); //grab breeze
+		ImageIcon Percept_grabStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_grabStench.jpg")); //grab stench
+		ImageIcon Percept_grabBreezeStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_grabBreezeStench.jpg")); //grab breeze stench
+		ImageIcon Percept_scream = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_scream.jpg")); //scream
+		ImageIcon Percept_screamBreeze = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_screamBreeze.jpg")); //scream breeze
+		ImageIcon Percept_screamStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_screamStench.jpg")); //scream stench
+		ImageIcon Percept_screamBreezeStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Percept_screamBreezeStench.jpg")); //scream breeze stench
 		
 		//Compass direction (5,5)
-		ImageIcon Compass_North = new ImageIcon(this.getClass().getResource("Compass_North.jpg")); //North
-		ImageIcon Compass_South = new ImageIcon(this.getClass().getResource("Compass_South.jpg")); //South
-		ImageIcon Compass_East = new ImageIcon(this.getClass().getResource("Compass_East.jpg")); //East
-		ImageIcon Compass_West = new ImageIcon(this.getClass().getResource("Compass_West.jpg")); //West
+		ImageIcon Compass_North = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Compass_North.jpg")); //North
+		ImageIcon Compass_South = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Compass_South.jpg")); //South
+		ImageIcon Compass_East = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Compass_East.jpg")); //East
+		ImageIcon Compass_West = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Compass_West.jpg")); //West
 		
 		//Human direction
-		ImageIcon HumanD_north = new ImageIcon(this.getClass().getResource("HumanD_north.jpg")); //human North
-		ImageIcon HumanD_south = new ImageIcon(this.getClass().getResource("HumanD_south.jpg")); //human South
-		ImageIcon HumanD_east = new ImageIcon(this.getClass().getResource("HumanD_east.jpg")); //human East
-		ImageIcon HumanD_west = new ImageIcon(this.getClass().getResource("HumanD_west.jpg")); //human West
+		ImageIcon HumanD_north = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanD_north.jpg")); //human North
+		ImageIcon HumanD_south = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanD_south.jpg")); //human South
+		ImageIcon HumanD_east = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanD_east.jpg")); //human East
+		ImageIcon HumanD_west = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanD_west.jpg")); //human West
 		
 		//Human percept
-		ImageIcon HumanP_bump = new ImageIcon(this.getClass().getResource("HumanP_bump.jpg")); //human wall meet
-		ImageIcon HumanP_stench = new ImageIcon(this.getClass().getResource("HumanP_stench.jpg")); //human stench
-		ImageIcon HumanP_breeze = new ImageIcon(this.getClass().getResource("HumanP_breeze.jpg")); //human breeze
-		ImageIcon HumanP_breezeStench = new ImageIcon(this.getClass().getResource("HumanP_breezeStench.jpg")); //human breeze and stench
-		ImageIcon HumanP_climbs = new ImageIcon(this.getClass().getResource("HumanP_climbs.jpg")); //human climb
-		ImageIcon HumanP_grab = new ImageIcon(this.getClass().getResource("HumanP_grab.jpg")); //human grab
-		ImageIcon HumanP_grabBreeze = new ImageIcon(this.getClass().getResource("HumanP_grabBreeze.jpg")); //human grab breeze
-		ImageIcon HumanP_grabStench = new ImageIcon(this.getClass().getResource("HumanP_grabStench.jpg")); //human grab stench
-		ImageIcon HumanP_grabBreezeStench = new ImageIcon(this.getClass().getResource("HumanP_grabBreezeStench.jpg")); //human grab breeze stench
-		ImageIcon HumanP_scream = new ImageIcon(this.getClass().getResource("HumanP_scream.jpg")); //human scream
-		ImageIcon HumanP_screamBreeze = new ImageIcon(this.getClass().getResource("HumanP_screamBreeze.jpg")); //human scream
-		ImageIcon HumanP_screamStench = new ImageIcon(this.getClass().getResource("HumanP_screamStench.jpg")); //human scream
-		ImageIcon HumanP_screamBreezeStench = new ImageIcon(this.getClass().getResource("HumanP_screamBreezeStench.jpg")); //human scream
-		ImageIcon HumanP_die = new ImageIcon(this.getClass().getResource("HumanP_die.jpg")); //human die
+		ImageIcon HumanP_bump = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_bump.jpg")); //human wall meet
+		ImageIcon HumanP_stench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_stench.jpg")); //human stench
+		ImageIcon HumanP_breeze = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_breeze.jpg")); //human breeze
+		ImageIcon HumanP_breezeStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_breezeStench.jpg")); //human breeze and stench
+		ImageIcon HumanP_climbs = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_climbs.jpg")); //human climb
+		ImageIcon HumanP_grab = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_grab.jpg")); //human grab
+		ImageIcon HumanP_grabBreeze = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_grabBreeze.jpg")); //human grab breeze
+		ImageIcon HumanP_grabStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_grabStench.jpg")); //human grab stench
+		ImageIcon HumanP_grabBreezeStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_grabBreezeStench.jpg")); //human grab breeze stench
+		ImageIcon HumanP_scream = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_scream.jpg")); //human scream
+		ImageIcon HumanP_screamBreeze = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_screamBreeze.jpg")); //human scream
+		ImageIcon HumanP_screamStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_screamStench.jpg")); //human scream
+		ImageIcon HumanP_screamBreezeStench = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_screamBreezeStench.jpg")); //human scream
+		ImageIcon HumanP_die = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/HumanP_die.jpg")); //human die
 
 		//Arrow
-		ImageIcon Arrow_three = new ImageIcon(this.getClass().getResource("Arrow_three.jpg")); // Arrow three
-		ImageIcon Arrow_two = new ImageIcon(this.getClass().getResource("Arrow_two.jpg")); // Arrow two
-		ImageIcon Arrow_one = new ImageIcon(this.getClass().getResource("Arrow_one.jpg")); // Arrow one
-		ImageIcon Arrow_none = new ImageIcon(this.getClass().getResource("Arrow_none.jpg")); // Arrow none
+		ImageIcon Arrow_three = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Arrow_three.jpg")); // Arrow three
+		ImageIcon Arrow_two = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Arrow_two.jpg")); // Arrow two
+		ImageIcon Arrow_one = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Arrow_one.jpg")); // Arrow one
+		ImageIcon Arrow_none = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Arrow_none.jpg")); // Arrow none
 		
 		//방문 격자 Check
-		ImageIcon Check_yes = new ImageIcon(this.getClass().getResource("Check_yes.jpg")); // 간적 yes
-		ImageIcon Check_no = new ImageIcon(this.getClass().getResource("Check_no.jpg")); // 간적 no
+		ImageIcon Check_yes = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Check_yes.jpg")); // 간적 yes
+		ImageIcon Check_no = new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Check_no.jpg")); // 간적 no
 		
 		
 		
@@ -557,19 +557,19 @@ public class Swing {
 		//Create Button
 		JButton Next = new JButton(""); // 금 찾으러 가는 버튼
 		//new ImageIcon(this.getClass().getResource("Block_wall.jpg"))
-		Next.setIcon(new ImageIcon(this.getClass().getResource("Image_NEXT.jpg")));
+		Next.setIcon(new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Image_NEXT.jpg")));
 		Next.setFont(new Font("굴림", Font.PLAIN, 12));
 		Next.setBounds(570, 550, 114, 55);
 		frame.getContentPane().add(Next);
 		
 		JButton Home = new JButton(""); // 출발지로 돌아가는 버튼
-		Home.setIcon(new ImageIcon(this.getClass().getResource("Image_HOME.jpg")));
+		Home.setIcon(new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Image_HOME.jpg")));
 		Home.setFont(new Font("굴림", Font.PLAIN, 12));
 		Home.setBounds(570, 605, 114, 55);
 		frame.getContentPane().add(Home);
 		
 		JButton Exit = new JButton(""); // 스윙 창 종료 버튼
-		Exit.setIcon(new ImageIcon(this.getClass().getResource("Image_EXIT.jpg")));
+		Exit.setIcon(new ImageIcon(this.getClass().getResource("/WumpusWorld/Image/Image_EXIT.jpg")));
 		Exit.setBounds(0, 605, 80, 55);
 		frame.getContentPane().add(Exit);
 			

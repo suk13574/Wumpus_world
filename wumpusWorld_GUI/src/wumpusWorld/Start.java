@@ -8,12 +8,12 @@ class Agent{
 	static int arrowCount = 3;
 	static int x;
 	static int y;
-	static int[][] visit = new int[6][6]; //¹æ¹®Çß´ÂÁö Ã¼Å©
-	static String[][] IKnow = new String[6][6]; //³»°¡ ¾Ë°íÀÖ´Â Á¤º¸ ÀúÀå
-	static int wumpusDie; //wumpus Á×¾ú´ÂÁö È®ÀÎ
-	static int randomTurn; //Àü¿¡ random turnÇß´ÂÁö
+	static int[][] visit = new int[6][6]; //ï¿½æ¹®ï¿½ß´ï¿½ï¿½ï¿½ Ã¼Å©
+	static String[][] IKnow = new String[6][6]; //ï¿½ï¿½ï¿½ï¿½ ï¿½Ë°ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	static int wumpusDie; //wumpus ï¿½×¾ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+	static int randomTurn; //ï¿½ï¿½ï¿½ï¿½ random turnï¿½ß´ï¿½ï¿½ï¿½
 	
-	//»çÀÌÅ¬ Ã¼Å© º¯¼ö
+	//ï¿½ï¿½ï¿½ï¿½Å¬ Ã¼Å© ï¿½ï¿½ï¿½ï¿½
 	static int cyclenum;
 	
 	public void initialAgent() {
@@ -21,17 +21,17 @@ class Agent{
 		x = 1;
 		y = 1;
 		
-		//¹æ¹®°ÝÀÚ ÃÊ±âÈ­
+		//ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 		for (int i = 0; i < 6; i++) {
 			for (int j = 0; j < 6; j++) {
 				visit[i][j] = 0;
 			}
 		}
-		//»çÀÌÅ¬ Ã¼Áî º¯¼ö ÃÊ±âÈ­
+		//ï¿½ï¿½ï¿½ï¿½Å¬ Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
 		cyclenum = 0;
 	}
 	
-	//Ã³À½¿¡ ¹æ¹®ÇÑ °ÝÀÚ ¾øÀ½, Á¤º¸ ¾øÀ½
+	//Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void initialVisit() {
 		for(int i = 0; i < 6; i ++) {
 			for(int j=0;j<6;j++) {
@@ -49,7 +49,7 @@ class Agent{
 		return arrowCount;
 	}
 	
-	//x y °ª ¹ÝÈ¯
+	//x y ï¿½ï¿½ ï¿½ï¿½È¯
 	public int getx() {
 		return x;
 	}
@@ -69,7 +69,7 @@ class Agent{
 		return IKnow[i][j];
 	}
 	
-	//¾²´Â ÇÔ¼ö(write)
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½(write)
 	public void writeVisit() {
 		visit[x][y] = 1;
 	}
@@ -91,144 +91,144 @@ class Agent{
 
 
 public class Start {
-	Newstate world = new Newstate(); //grid Á¤º¸ÀÖÀ½
-	Percept p = new Percept(); //percept ¹Þ¾Æ¿À±â À§ÇÑ °´Ã¼
-	Agent agent = new Agent(); //agent Á¤º¸ÀúÀåµÈ °´Ã¼
-	Climb climb = new Climb(); //µÇµ¹¾Æ°£´Ù
-	static int buttoncheck; //¹öÆ° ´©¸£¸é 1, ±Ý ÀâÀ¸¸é 0
+	Newstate world = new Newstate(); //grid ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	Percept p = new Percept(); //percept ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+	Agent agent = new Agent(); //agent ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
+	Climb climb = new Climb(); //ï¿½Çµï¿½ï¿½Æ°ï¿½ï¿½ï¿½
+	static int buttoncheck; //ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0
 	
 	int x;
 	int y;
 	
 	int cycle = 1;
 	
-	//½ÃÀÛ Àü ÁØºñ
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Øºï¿½
 	public void preStart() {
-		agent.initialAgent(); //À§Ä¡, ¹æÇâ ÃÊ±â°ªÀ¸·Î
-		agent.initialVisit(); //ÇöÀç ¹æ¹®ÇÑ °÷ ¾øÀ½
-		Agent.randomTurn = 0; //·£´ýµ¹±â 0
+		agent.initialAgent(); //ï¿½ï¿½Ä¡, ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±â°ªï¿½ï¿½ï¿½ï¿½
+		agent.initialVisit(); //ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		Agent.randomTurn = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0
 	}
 	
 	
-	//½ÃÀÛ
+	//ï¿½ï¿½ï¿½ï¿½
 	public int StartWorld() throws InterruptedException {
-		//°ª ¹Þ¾Æ¿È
+		//ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½
 		x = agent.getx();
 		y = agent.gety();
 		
 
-		//½ºÀ® ½ÇÇà
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Swing swing = new Swing();
 		swing.frame.setVisible(true);
 			
-		//1. ÇöÀç Á¤º¸ ºÒ·¯¿Â´Ù
+		//1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½Â´ï¿½
 		String nowState = world.getGrid(x, y);
 			
-		//2. ¹æ¹®Ã¼Å©¿Í ÇöÀç °ÝÀÚ »óÅÂ Á¤º¸ Ãß°¡
+		//2. ï¿½æ¹®Ã¼Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 		agent.writeVisit();
 		if(Agent.IKnow[x][y] == "NULL") agent.writeIKnow(nowState);
-		System.out.print("\n(" + x + ", " + y + ")¹æ¹®/ ");
+		System.out.print("\n(" + x + ", " + y + ")ï¿½æ¹®/ ");
 			
-		//3. percept ¾ò¾î¿È
+		//3. percept ï¿½ï¿½ï¿½ï¿½
 		int[] check = p.check(x, y);
 		System.out.print(Arrays.toString(check)+"/ ");
 			
-		//4. WUMPUS³ª PITCH ÀÖÀ¸¸é Á×À½
+		//4. WUMPUSï¿½ï¿½ PITCH ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(nowState == "WUMPUS") {
-			System.out.print(" WUMPUS ¸¸³µ´Ù. DIE");
+			System.out.print(" WUMPUS ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. DIE");
 			Die();
 			return 1;
 		}
 		if(nowState == "PITCH") {
-			System.out.print(" PITCH ¹ß°ß. DIE");
+			System.out.print(" PITCH ï¿½ß°ï¿½. DIE");
 			Die();
 			return 1;
 		}
 			
-		//4. °¢ »óÈ²¿¡¼­ reasoning
+		//4. ï¿½ï¿½ ï¿½ï¿½È²ï¿½ï¿½ï¿½ï¿½ reasoning
 		String direction = agent.getDirection();
 			
-		//4-1. º®ÀÌ¸é BUMP! ÀüÀ¸·Î µ¹¾Æ°¡¼­ turn
+		//4-1. ï¿½ï¿½ï¿½Ì¸ï¿½ BUMP! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ turn
 		if(check[PERCEPT_num.BUMP.ordinal()] == 1) {
-			System.out.print(" º® ¹ß°ß. Àü °ÝÀÚ·Î µ¹¾Æ°£´Ù.");
-			//ÀüÀ¸·Î µ¹¾Æ°£´Ù
+			System.out.print(" ï¿½ï¿½ ï¿½ß°ï¿½. ï¿½ï¿½ ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½.");
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ°ï¿½ï¿½ï¿½
 			int[] backXY;
 			backXY = Back(direction);
 			//x = backXY[0];
 			//y = backXY[1];
 			agent.writeXY(backXY);
-			//Turn -> µÇµ¹¾Æ°¡¼­ ÇÒ°ÅÀÓ
+			//Turn -> ï¿½Çµï¿½ï¿½Æ°ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½
 			return 1;
 		}
-		//4-2. gold ¹ß°ßÇÏ¸é ¸ØÃã
+		//4-2. gold ï¿½ß°ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(Newstate.grid[x][y] == "GOLD") {
-			System.out.print(" GOLD ¹ß°ß. Grab\n");
+			System.out.print(" GOLD ï¿½ß°ï¿½. Grab\n");
 			Newstate.grid[x][y] = "NOGOLD";
 			return 0;
 		}
-		//4-3. ´ÙÀ½ °ÝÀÚ È®ÀÎÇØÁÖ±â
+		//4-3. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
 		int[] nextXY = Next(direction);
 		int nextX = nextXY[0];
 		int nextY = nextXY[1];
-		//´ÙÀ½ °ÝÀÚ Á¤º¸ È®ÀÎ - NULLÀÌ¸é ¸ð¸£´Â °Í
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ - NULLï¿½Ì¸ï¿½ ï¿½ð¸£´ï¿½ ï¿½ï¿½
 		String nextState = agent.getIKnow(nextX, nextY);
 		System.out.print(" Next block: "+nextState);
 			
-		//¸¸¾à ´ÙÀ½ °ÝÀÚ ¹æ¹®ÇÏ¸é ·£´ý È®·ü·Î ¹æÇâ µ·´Ù
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		if(Agent.visit[nextX][nextY] == 1 && Agent.randomTurn == 0) {
 			Random r = new Random();
 			if(r.nextInt(100)<50) {
 				direction = Turn();
 				agent.writeDirection(direction);
-				System.out.print(", ´ÙÀ½°ÝÀÚ ¹æ¹®ÇßÀ½ TURN, ¹æÇâ: "+direction);
+				System.out.print(", ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æ¹®ï¿½ï¿½ï¿½ï¿½ TURN, ï¿½ï¿½ï¿½ï¿½: "+direction);
 				nextX = nextXY[0];
 				nextY = nextXY[1];
-				//´ÙÀ½ °ÝÀÚ Á¤º¸ È®ÀÎ - NULLÀÌ¸é ¸ð¸£´Â °Í
+				//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ - NULLï¿½Ì¸ï¿½ ï¿½ð¸£´ï¿½ ï¿½ï¿½
 				nextState = agent.getIKnow(nextX, nextY);
-				System.out.print(" ·£´ý µ¹±â");
+				System.out.print(" ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				Agent.randomTurn = 1;
 				return 1;
 			}
 			else {
-				System.out.print(" ¹æÇâ: "+direction);
+				System.out.print(" ï¿½ï¿½ï¿½ï¿½: "+direction);
 			}
 		}
 		Agent.randomTurn = 0;
 		
-		String nextDirection; //TurnÇÏ¸é ´ÙÀ½ ¹æÇâ ÀÖÀ½
-		if(nextState == "WALL") { //º®ÀÌ¸é turn
-			System.out.print(" ´ÙÀ½¿¡ º®ÀÌ ÀÖ±¸³ª. ACTION: TURN->");
+		String nextDirection; //Turnï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+		if(nextState == "WALL") { //ï¿½ï¿½ï¿½Ì¸ï¿½ turn
+			System.out.print(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½ï¿½ï¿½. ACTION: TURN->");
 			nextDirection = Turn();
-			agent.writeDirection(nextDirection); //¹æÇâ¾²±â
-			System.out.print(" ¹æÇâ: "+nextDirection);
+			agent.writeDirection(nextDirection); //ï¿½ï¿½ï¿½â¾²ï¿½ï¿½
+			System.out.print(" ï¿½ï¿½ï¿½ï¿½: "+nextDirection);
 		}
-		else if(nextState == "WUMPUS") { //wumpus ÀÖÀ¸¸é ½î±â
-			System.out.print(" ´ÙÀ½¿¡ wumpus°¡ ÀÖ±¸³ª. " + "ACTION: Shoot");
+		else if(nextState == "WUMPUS") { //wumpus ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+			System.out.print(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ wumpusï¿½ï¿½ ï¿½Ö±ï¿½ï¿½ï¿½. " + "ACTION: Shoot");
 			shoot();
 			System.out.print(" , ACTION: GoForward");
 		}
-		else if(nextState == "PITCH") { //pitch ÀÖÀ¸¸é ÇÇÇÏ±â
-			System.out.print(" ´ÙÀ½¿¡ pitch°¡ ÀÖ±¸³ª. TURN->");
+		else if(nextState == "PITCH") { //pitch ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+			System.out.print(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ pitchï¿½ï¿½ ï¿½Ö±ï¿½ï¿½ï¿½. TURN->");
 			nextDirection = Turn();
 			agent.writeDirection(nextDirection);
-			System.out.print(", ¹æÇâ: "+nextDirection);
+			System.out.print(", ï¿½ï¿½ï¿½ï¿½: "+nextDirection);
 		}
-		else { //NULL - ´ÙÀ½Á¤º¸ ¸ð¸£°Å³ª NONE·Î ¾ÈÀüÇÏ´Ù.
+		else { //NULL - ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ð¸£°Å³ï¿½ NONEï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
 			System.out.print(" ACTION: GoForward");
-			System.out.print(" ¹æÇâ: "+direction);		
+			System.out.print(" ï¿½ï¿½ï¿½ï¿½: "+direction);		
 			agent.writeXY(nextXY); //GoForward
-			Agent.wumpusDie = 0; //wumpusDie ÃÊ±âÈ­
+			Agent.wumpusDie = 0; //wumpusDie ï¿½Ê±ï¿½È­
 		}
 		return 1;
-	} //Startwworld ³¡
+	} //Startwworld ï¿½ï¿½
 	
 	
-	public void Die() { //wumpus³ª picth ¸¸³ª¸é Á×À½
+	public void Die() { //wumpusï¿½ï¿½ picth ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		agent.initialAgent();
 	}
 	
 	
-	//Àü¿¡ ÀÖ´ø À§Ä¡ ¹ÝÈ¯
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½È¯
 	public int[] Back(String direction) {
 		if(direction == "EAST") return new int[] {x-1,y};
 		else if(direction == "WEST") return new int[] {x+1, y};
@@ -236,7 +236,7 @@ public class Start {
 		else return new int[] {x, y+1};
 	}
 	
-	//´ÙÀ½ °ÝÀÚ À§Ä¡ ¾Ë·ÁÁÜ
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½Ë·ï¿½ï¿½ï¿½
 	public int[] Next(String direction) {
 		if(direction == "EAST") return new int[] {x+1,y};
 		else if(direction == "WEST") return new int[] {x-1, y};
@@ -245,9 +245,9 @@ public class Start {
 	}
 	
 	
-	//wumpus Á×ÀÎ´Ù
+	//wumpus ï¿½ï¿½ï¿½Î´ï¿½
 	public void shoot() {
-		//1. È­»ì ÇÑ°³ »ç¿ëÇÏ¿© ´ÙÀ½ °ÝÀÚ »óÅÂ wumpus -> none
+		//1. È­ï¿½ï¿½ ï¿½Ñ°ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ wumpus -> none
 		int possible = agent.shootArrow();
 		if(possible == 1) {
 			String direction = agent.getDirection();
@@ -255,7 +255,7 @@ public class Start {
 			Newstate.grid[nextXY[0]][nextXY[1]] = "WUMPUSDIE";
 			Agent.IKnow[nextXY[0]][nextXY[1]] = "NONE";
 			System.out.print(" SCREAM");
-			Agent.wumpusDie = 1; //wumpus Á×¾ú´Ù.
+			Agent.wumpusDie = 1; //wumpus ï¿½×¾ï¿½ï¿½ï¿½.
 		}
 		else {
 			String nextDirection = Turn();
@@ -315,7 +315,7 @@ public class Start {
 		return next_direction;
 	}
 	
-	//»çÀÌÅ¬ Ã¼Å©ÇØ¾ßÇÏ´ÂÁö È®ÀÎ
+	//ï¿½ï¿½ï¿½ï¿½Å¬ Ã¼Å©ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 	public int cycleCheck(int i, int j) {
 		if (i == 1 || j == 1) {
 			return 1;
@@ -323,11 +323,11 @@ public class Start {
 		else if (i == 4 || j == 4) {
 			return 1;
 		}
-		else return 0; //´õÀÌ»ó »çÀÌÅ¬ Ã¼Å© x
+		else return 0; //ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ï¿½ï¿½ï¿½Å¬ Ã¼Å© x
 		
 	}
 	
-	//»çÀÌÅ¬ °ÝÀÚ µµ´ÂÁö È®ÀÎ (À§ Ã¼Å©¿¡¼­ 1 ³ª¿À¸é ÇÏ´Â °Í)
+	//ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ (ï¿½ï¿½ Ã¼Å©ï¿½ï¿½ï¿½ï¿½ 1 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½)
 	public void countCycle(int i, int j) {
 		if (Newstate.grid[i][j] != "WALL") {
 			if (Agent.visit[i][j] == 0) {
@@ -336,7 +336,7 @@ public class Start {
 		}
 	}
 	
-	//»çÀÌÅ¬ ÀÖÀ¸¸é ¾ÈÀ¸·Î µé¾î°¨
+	//ï¿½ï¿½ï¿½ï¿½Å¬ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½î°¨
 	public String cycleOut(int i, int j) {
 		if(i == 1) return "EAST";
 		else if(i == 4) return "WEST";
